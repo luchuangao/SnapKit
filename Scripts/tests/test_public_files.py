@@ -25,6 +25,8 @@ class PublicFilesTests(unittest.TestCase):
     def test_credential_literals_and_placeholders(self):
         value = b'password=' + b'"' + b'private-example-value' + b'"'
         self.assertIn('credential literal', scanner.content_findings(value))
+        json_value = b'{"client_secret":' + b'"' + b'private-example-value' + b'"}'
+        self.assertIn('credential literal', scanner.content_findings(json_value))
         self.assertFalse(scanner.content_findings(b'api_key="YOUR_API_KEY"'))
 
     def test_private_file_types_and_directories(self):

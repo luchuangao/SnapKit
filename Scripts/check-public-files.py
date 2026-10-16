@@ -22,7 +22,7 @@ PRIVATE_DIRS = {'.ssh', '.aws', '.release', 'secrets', 'credentials'}
 
 def content_findings(data):
     findings = [label for label, pattern in PATTERNS.items() if re.search(pattern, data)]
-    assignment = rb'''(?im)\b(?:password|passwd|client_secret|api_key|access_token|refresh_token|secret_key)\b\s*[:=]\s*["']([^\r\n"']{8,})["']'''
+    assignment = rb'''(?im)\b(?:password|passwd|client_secret|api_key|access_token|refresh_token|secret_key)\b["']?\s*[:=]\s*["']([^\r\n"']{8,})["']'''
     for match in re.finditer(assignment, data):
         if not re.fullmatch(rb'(?:YOUR_[A-Z_]+|<[^>]+>|\$\{[^}]+\}|placeholder|example|change[_-]?me)', match[1], re.IGNORECASE):
             findings.append('credential literal')
