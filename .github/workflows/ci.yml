@@ -8,6 +8,10 @@ jobs:
     runs-on: macos-14
     steps:
       - uses: actions/checkout@v4
+      - name: Check public files for sensitive information
+        run: |
+          python3 Scripts/check-public-files.py
+          python3 -m unittest discover -s Scripts/tests -p 'test_*.py'
       - name: Run geometry tests
         run: swift test
       - name: Build application

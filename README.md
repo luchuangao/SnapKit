@@ -25,7 +25,7 @@ Actual English app windows, exported from the running application. Chinese captu
 
 ## Installation
 
-The current downloadable build is **v1.1.1 for Apple Silicon, macOS 13+**.
+The current downloadable build is **v1.1.2 for Apple Silicon, macOS 13+**.
 
 1. Download the DMG from [Releases](https://github.com/luchuangao/SnapKit/releases/latest).
 2. Open it and drag SnapKit to Applications.
@@ -71,6 +71,8 @@ Eight geometry tests cover odd-sized displays, margins/gutters, negative display
 - Most compatibility shortcut defaults have not been verified against a running copy of Magnet.
 
 Preferences are stored locally with UserDefaults. The app has no analytics or app network client. It reads window geometry via macOS Accessibility APIs to perform user-triggered window management.
+
+Release packaging excludes local debug paths and untracked source files. See [public release privacy](Docs/ReleasePrivacy.md) for the checks and their limits.
 
 ## Reproducing interface captures
 

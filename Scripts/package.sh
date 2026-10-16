@@ -7,12 +7,14 @@ version="$(/usr/libexec/PlistBuddy -c 'Print :CFBundleShortVersionString' "$app/
 artifact="SnapKit-${version}-macOS-arm64"
 source="SnapKit-${version}-source"
 codesign --verify --deep --strict "$app"
+python3 Scripts/check-public-files.py "$app"
 ditto -c -k --sequesterRsrc --keepParent "$app" "dist/${artifact}.zip"
 staging="$(mktemp -d "$PWD/.build/dmg.XXXXXX")"
 trap 'rm -rf "$staging"' EXIT
 ditto "$app" "$staging/SnapKit.app"
 ln -s /Applications "$staging/Applications"
 hdiutil create -volname "SnapKit ${version}" -srcfolder "$staging" -ov -format UDZO "dist/${artifact}.dmg"
-zip -q -r "$staging/source.zip" Package.swift README.md README.zh-CN.md .gitignore Sources Tests Scripts Resources Research Branding/Final Docs .github -x 'Research/official-*.png'
+python3 Scripts/check-public-files.py --source-zip "$staging/source.zip"
 mv "$staging/source.zip" "dist/${source}.zip"
+python3 Scripts/check-public-files.py "dist/${artifact}.zip" "dist/${source}.zip"
 shasum -a 256 "dist/${artifact}.dmg" "dist/${artifact}.zip" "dist/${source}.zip" > "dist/SHA256SUMS-${version}.txt"

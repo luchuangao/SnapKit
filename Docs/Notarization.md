@@ -1,6 +1,6 @@
 # Developer ID signing and Apple notarization
 
-The 1.1.1 (build 4) release uses a Developer ID Application signature, Hardened Runtime and an Apple notarization ticket stapled to `SnapKit.app`. The DMG and ZIP contain this exact notarized application. The outer DMG is a transport container, not a separately notarized installer package.
+The 1.1.2 (build 5) release uses a Developer ID Application signature, Hardened Runtime and an Apple notarization ticket stapled to `SnapKit.app`. The DMG and ZIP contain this exact notarized application. The outer DMG is a transport container, not a separately notarized installer package.
 
 Verification after extracting or copying the app:
 
