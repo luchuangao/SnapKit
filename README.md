@@ -25,14 +25,14 @@ Actual English app windows, exported from the running application. Chinese captu
 
 ## Installation
 
-The current downloadable build is **v1.1.0 for Apple Silicon, macOS 13+**.
+The current downloadable build is **v1.1.1 for Apple Silicon, macOS 13+**.
 
 1. Download the DMG from [Releases](https://github.com/luchuangao/SnapKit/releases/latest).
 2. Open it and drag SnapKit to Applications.
-3. Open SnapKit. This local build is **ad-hoc signed and not Apple-notarized**; macOS may require approval in System Settings → Privacy & Security before opening it.
+3. Open SnapKit. The official release is **Developer ID signed and Apple-notarized**, with the notarization ticket attached to the app.
 4. Enable SnapKit in System Settings → Privacy & Security → Accessibility so it can move other applications’ windows.
 
-SnapKit runs in the menu bar. Reopen the app or press `⌘,` while Settings is active to reach its settings. No automatic updater is included.
+SnapKit runs in the menu bar. Reopen the app or press `⌘,` while Settings is active to reach its settings. No automatic updater is included. See [signing and notarization](Docs/Notarization.md) for verification and release instructions.
 
 ## Shortcuts
 

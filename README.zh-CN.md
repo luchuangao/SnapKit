@@ -32,7 +32,7 @@ SnapKit 驻留菜单栏。再次打开应用或按 `⌘,` 进入设置。图标�
 - 绿色按钮入口可能与 macOS 原生窗口菜单重叠，默认关闭。
 - 仅调整支持辅助功能的标准窗口；应用的最小尺寸、全屏模式、非标准窗口可能限制调整。不会跨 Spaces 移动窗口。
 - 当前机器只有一块显示器，多屏与竖屏通过几何单元测试覆盖，尚未做多屏硬件测试。
-- 当前成品为本机 Apple Silicon 架构、临时签名；没有 Apple Developer ID 签名或公证。移植到 Intel Mac 可在对应机器重新构建。
+- 当前 1.1.1 成品为 Apple Silicon 架构，已使用 Developer ID 签名并通过 Apple 公证，App 附有公证票据。移植到 Intel Mac 可在对应机器重新构建。
 
 ## 默认快捷键
 
@@ -75,12 +75,12 @@ dist/SnapKit.app/Contents/MacOS/SnapKit --smoke-test
 
 透明 PNG 在 `Resources/AppIcon.png`，macOS `.icns` 在 `Resources/AppIcon.icns`，设计母版与处理提示词在 `Branding/Final/`。
 
-`./Scripts/package.sh` 生成带版本号的安装包和源码包。当前安装包是 `dist/SnapKit-1.1.0-macOS-arm64.dmg`；旧版安装包保留。
+`./Scripts/package.sh` 生成带版本号的安装包和源码包。当前安装包是 `dist/SnapKit-1.1.1-macOS-arm64.dmg`；旧版安装包保留。
 
-## GitHub 发布版 1.1.0
+## GitHub 发布版 1.1.1
 
 [下载最新版](https://github.com/luchuangao/SnapKit/releases/latest) · [问题反馈](https://github.com/luchuangao/SnapKit/issues) · [English](README.md)
 
 新增真实英文界面，可在设置 → 通用 → 语言中选择简体中文、English 或跟随系统。中英文实际窗口截图分别保存在 `Docs/Screenshots/`。运行 `./Scripts/capture-screenshots.sh` 可重新导出，PNG 附带语言、版本和尺寸元数据。
 
-当前分发包为 Apple Silicon、macOS 13+，采用临时签名，尚未完成 Apple 公证。下载 DMG 后拖入“应用程序”，首次打开按系统提示允许，再授予辅助功能权限。没有自动更新器。
+当前分发包为 1.1.1（构建 4），适用于 Apple Silicon、macOS 13+，已使用 Developer ID 签名并通过 Apple 公证，App 附有可离线验证的公证票据。下载 DMG 后拖入“应用程序”，打开后授予辅助功能权限。没有自动更新器。验证与复现步骤见 [公证说明](Docs/Notarization.md)。

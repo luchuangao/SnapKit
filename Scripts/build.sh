@@ -11,6 +11,12 @@ cp "$binary_dir/SnapKit" "$app/Contents/MacOS/SnapKit"
 cp Resources/Info.plist "$app/Contents/Info.plist"
 if [ -f Resources/AppIcon.icns ]; then cp Resources/AppIcon.icns "$app/Contents/Resources/"; fi
 cp Resources/AppIcon.png "$app/Contents/Resources/"
-codesign --force --deep --sign - "$app"
+signing_identity="${SNAPKIT_SIGNING_IDENTITY:--}"
+if [ "$signing_identity" = "-" ]; then
+  codesign --force --sign - "$app"
+else
+  codesign --force --options runtime --timestamp --sign "$signing_identity" "$app"
+fi
+codesign --verify --strict "$app"
 touch "$app"
 echo "$app"
