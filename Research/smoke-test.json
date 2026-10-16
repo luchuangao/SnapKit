@@ -1,0 +1,62 @@
+{
+  "checks" : [
+    {
+      "actual" : "{{-0, 29}, {640, 721}}",
+      "applied" : true,
+      "expected" : "{{0, 29}, {640, 722}}",
+      "layout" : "left",
+      "matches" : true
+    },
+    {
+      "actual" : "{{640, 29}, {640, 721}}",
+      "applied" : true,
+      "expected" : "{{640, 29}, {640, 722}}",
+      "layout" : "right",
+      "matches" : true
+    },
+    {
+      "actual" : "{{0, 29}, {640, 361}}",
+      "applied" : true,
+      "expected" : "{{0, 29}, {640, 361}}",
+      "layout" : "topLeft",
+      "matches" : true
+    },
+    {
+      "actual" : "{{640, 390}, {640, 361}}",
+      "applied" : true,
+      "expected" : "{{640, 390}, {640, 361}}",
+      "layout" : "bottomRight",
+      "matches" : true
+    },
+    {
+      "actual" : "{{427, 29}, {426, 721}}",
+      "applied" : true,
+      "expected" : "{{427, 29}, {426, 722}}",
+      "layout" : "centerThird",
+      "matches" : true
+    },
+    {
+      "actual" : "{{-0, 29}, {1280, 721}}",
+      "applied" : true,
+      "expected" : "{{0, 29}, {1280, 722}}",
+      "layout" : "maximize",
+      "matches" : true
+    },
+    {
+      "actual" : "{{0, 30}, {1280, 721}}",
+      "applied" : true,
+      "expected" : "{{0, 29.5}, {1280, 721}}",
+      "layout" : "center",
+      "matches" : true
+    },
+    {
+      "actual" : "{{200, 240}, {460, 372}}",
+      "applied" : true,
+      "expected" : "{{200, 240}, {460, 372}}",
+      "layout" : "restore",
+      "matches" : true
+    }
+  ],
+  "passed" : true,
+  "trusted" : true
+}

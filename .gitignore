@@ -1,0 +1,9 @@
+.build/
+DerivedData/
+dist/
+.DS_Store
+Branding/Concepts/
+Branding/References/
+Research/official-*.png
+output/
+.playwright-cli/
